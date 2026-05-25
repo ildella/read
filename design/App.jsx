@@ -19,20 +19,14 @@ const steps = [
   },
 ];
 
-const reasons = [
-  "Pocket is gone. Millions of readers need a new home.",
-  "You save articles. You never read them. We fix that.",
-  "AI should help you read, not replace reading.",
-];
-
 const highlights = [
   {
     title: "Offline-first",
     text: "Your articles live on your device. Save once, then read or listen without asking the cloud for permission.",
   },
   {
-    title: "Bring your own voice",
-    text: "Use your preferred TTS provider — OpenAI, ElevenLabs, Gemini, local models — or bring your own API key.",
+    title: "Beautiful voices, your choice",
+    text: "Start with Frankie’s built-in natural voices, then connect your preferred TTS provider or API key when you want full control.",
   },
   {
     title: "Calm by design",
@@ -97,6 +91,14 @@ function WaveMark() {
 }
 
 function App() {
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accentColor": "#A8582D",
+  "paperWarmth": "#F6EFE3",
+  "sectionScale": 1,
+  "radiusScale": 1
+}/*EDITMODE-END*/;
+
+
   const scrollToFlow = () => document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" });
 
   return (
@@ -116,7 +118,7 @@ function App() {
           --gold: #d3a14e;
           --sage: #69705a;
           --shadow: 0 28px 90px rgba(73, 46, 19, 0.13);
-          --radius: 28px;
+          --radius: calc(28px * var(--ocd-tweak-radius-scale, 1));
           --max: 1160px;
         }
 
@@ -299,7 +301,7 @@ function App() {
         }
         .margin-note strong { color: var(--ink); display: block; margin-bottom: 4px; }
 
-        .section-pad { padding: clamp(78px, 12vw, 148px) 0; }
+        .section-pad { padding: calc(clamp(78px, 12vw, 148px) * var(--ocd-tweak-section-scale, 1)) 0; }
         .section-head { max-width: 720px; margin-bottom: clamp(34px, 6vw, 68px); }
         .section-kicker { color: var(--accent-dark); font-weight: 800; font-size: .95rem; letter-spacing: .08em; text-transform: uppercase; }
         h2 { margin-top: 12px; font-size: clamp(2.35rem, 5.5vw, 5.8rem); line-height: .95; font-weight: 720; }
@@ -469,7 +471,7 @@ function App() {
           </div>
         </section>
 
-        <section className="why section-pad" aria-labelledby="why-title">
+        {false && <section className="why section-pad" aria-labelledby="why-title">
           <div className="container why-grid">
             <div className="section-head">
               <span className="section-kicker">Why this, why now</span>
@@ -481,7 +483,8 @@ function App() {
           </div>
         </section>
 
-        <section id="features" className="section-pad" aria-labelledby="features-title">
+        }
+          <section id="features" className="section-pad" aria-labelledby="features-title">
           <div className="container highlights-wrap">
             <div className="quote-card">
               <p>Not more to manage. More you can finally finish.</p>
@@ -506,8 +509,8 @@ function App() {
 
         <section className="proof" aria-label="Trust statement">
           <div className="container">
-            <div className="proof-line">
-              <strong>Built by readers, for readers.</strong>
+            <div className="proof-line proof-line-simple">
+              
               <span>No fake logos. No inflated claims. Just a patient tool for people who still love the web.</span>
             </div>
           </div>
