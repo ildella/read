@@ -1,0 +1,11 @@
+{
+  "summary": {
+    "en-US": "Save Web pages to Frankie for Offline read and private AI chat."
+  },
+  "categories": [
+    "privacy-security"
+  ],
+  "version": {
+    "license": "GPL-3.0-only"
+  }
+}

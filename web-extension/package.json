@@ -1,0 +1,64 @@
+{
+  "name": "frankie-web-extension",
+  "version": "1.10.1-1",
+  "engines": {
+    "node": ">=22"
+  },
+  "type": "module",
+  "imports": {
+    "#package": {
+      "default": "./package.json"
+    }
+  },
+  "private": true,
+  "packageManager": "yarn@4.15.0+sha512.07ec708ac11e2eaa4ea2b04cfbb272812f7e74a753f1595eaef4486c663a98306a30cca3e6fc40f7a0b168dcfb3a2490b6a5e0501e20fb69cc36f563dd161c53",
+  "author": {
+    "name": "Daniele Dellafiore",
+    "url": "https://ildella.net/"
+  },
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "build.base": "rollup --config --bundleConfigAsCjs",
+    "build.firefox": "WEB_EXTENSION_RUNTIME_BROWSER=firefox yarn build",
+    "build:watch": "WEB_EXTENSION_RUNTIME_BROWSER=firefox WEB_EXTENSION_RUNTIME_MODE=development nodemon --exec 'yarn build' --watch src",
+    "watch": "yarn build:watch",
+    "depcheck": "depcheck",
+    "dev:android": "web-ext run -t firefox-android --adb-device 3400465698009FU --firefox-apk org.mozilla.fenix",
+    "dev:chrome": "web-ext run --target chromium --start-url chrome://extensions/",
+    "dev:chrome:pesistent": "yarn dev:chrome --keep-profile-changes",
+    "dev:firefox": "web-ext run --firefox=/opt/firefox/firefox",
+    "dev:firefox:persistent": "yarn dev:firefox --devtools --keep-profile-changes --p $HOME/.mozilla/firefox/web-ext-dev-edition",
+    "dev": "yarn dev:firefox:persistent",
+    "lint": "yarn lint.eslint && yarn lint.web-ext",
+    "lint.eslint": "eslint . --max-warnings 0",
+    "lint.inspect": "npx @eslint/config-inspector",
+    "lint.web-ext": "web-ext lint",
+    "sign": "yarn build.firefox && web-ext sign --channel=unlisted --amo-metadata amo-metadata.json --api-key $MOZILLA_ADDON_JWT_KEY --api-secret $MOZILLA_ADDON_JWT_SECRET",
+    "publish": "yarn build.firefox && web-ext sign --channel=listed --amo-metadata amo-metadata.json --api-key $MOZILLA_ADDON_JWT_KEY --api-secret $MOZILLA_ADDON_JWT_SECRET",
+    "package.chrome": "yarn build && web-ext build",
+    "web-ext": "web-ext"
+  },
+  "devDependencies": {
+    "@eslint/json": "0.14.0",
+    "@noble/curves": "1.9.7",
+    "@noble/hashes": "1.8.0",
+    "@rollup/plugin-commonjs": "29.0.0",
+    "@rollup/plugin-json": "6.1.0",
+    "@rollup/plugin-node-resolve": "16.0.3",
+    "@rollup/plugin-replace": "6.0.3",
+    "eslint": "9.39.2",
+    "eslint-nostandard": "0.3.6",
+    "rollup": "4.55.1",
+    "web-ext": "9.2.0",
+    "webextension-polyfill": "0.12.0"
+  },
+  "dependencies": {
+    "@extractus/article-extractor": "8.0.20",
+    "turndown": "7.2.2",
+    "uuid": "13.0.0"
+  },
+  "resolutions": {
+    "glob": "10.4.5"
+  },
+  "stableVersion": "1.10.0"
+}

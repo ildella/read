@@ -1,0 +1,44 @@
+{
+	"/": [
+		"src/routes/+page.js",
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/read": [
+		"src/routes/read/+page.js",
+		"src/routes/read/+layout.js",
+		"src/routes/+layout.js",
+		"src/routes/read/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/read/articles": [
+		"src/routes/read/articles/+page.js",
+		"src/routes/read/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/read/collections": [
+		"src/routes/read/collections/+page.js",
+		"src/routes/read/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/read/collections/[publication]": [
+		"src/routes/read/collections/[publication]/+page.js",
+		"src/routes/read/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/read/queue": [
+		"src/routes/read/queue/+page.js",
+		"src/routes/read/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/read/settings": [
+		"src/routes/read/settings/+page.js",
+		"src/routes/read/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/read/[documentId]": [
+		"src/routes/read/[documentId]/+page.js",
+		"src/routes/read/+layout.js",
+		"src/routes/+layout.js"
+	]
+}
