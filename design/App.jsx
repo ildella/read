@@ -35,6 +35,7 @@ const highlights = [
 ];
 
 const faqs = [
+  ["How do I use Frankie?", "Frankie is a web app that works on your phone and desktop — no native app to install. Add the browser extension once, then save articles into your reading room with a click."],
   ["Do I need an internet connection?", "Only to save. Reading and listening work offline after the article is on your device."],
   ["Which TTS voices are supported?", "OpenAI, ElevenLabs, Gemini, local models, and any provider you connect with your own API key."],
   ["Is this a replacement for Pocket?", "Yes. Frankie is built for the readers Pocket left behind, with listening as a first-class habit."],

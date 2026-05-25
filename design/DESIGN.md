@@ -92,4 +92,6 @@ Rounded forms are generous but not bubbly. Pill buttons, large soft cards, and o
 - Do use inline SVG, typography, and texture instead of screenshots.
 - Do preserve the offline-first and reader-first positioning.
 - Don't use purple gradients, chat bubbles, robots, fake testimonials, or hard-sell language.
+- Do explain app access in plain-language terms: web app for phone/desktop plus a browser extension for saving.
+
 - Don't add SaaS dashboards, fake product screenshots, or inflated social proof.
