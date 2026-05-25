@@ -1,6 +1,6 @@
 {
-  "name": "webapp",
-  "version": "4.7.23-0",
+  "name": "FrankieRead",
+  "version": "1.0.0-0",
   "private": true,
   "type": "module",
   "packageManager": "yarn@4.15.0+sha512.07ec708ac11e2eaa4ea2b04cfbb272812f7e74a753f1595eaef4486c663a98306a30cca3e6fc40f7a0b168dcfb3a2490b6a5e0501e20fb69cc36f563dd161c53",
@@ -21,6 +21,7 @@
     "depcheck": "depcheck",
     "dev": "vite dev --host",
     "web": "yarn dev",
+    "web.netlify": "netlify dev",
     "desktop": "yarn desktop.dev",
     "desktop.dev": "yarn tauri dev",
     "desktop.build": "yarn tauri build -b deb",
@@ -113,10 +114,5 @@
     "workbox-precaching": "7.3.0",
     "ws": "8.18.3",
     "xstream": "11.14.0"
-  },
-  "dependencies": {
-    "@tauri-apps/plugin-opener": "2.5.0",
-    "@tauri-apps/plugin-shell": "2.3.0"
-  },
-  "stableVersion": "4.7.22"
+  }
 }

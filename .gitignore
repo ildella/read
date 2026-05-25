@@ -2,7 +2,7 @@
 node_modules
 /build
 /build-dir
-/.svelte-kit
+.svelte-kit/
 /package
 .env
 .env.*
@@ -54,3 +54,6 @@ nucube-license-state.json
 exports/sync*
 .opencode/opencode-loop
 .opencode/**
+
+# Local Netlify folder
+.netlify

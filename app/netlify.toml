@@ -1,0 +1,8 @@
+[build]
+  command = "yarn install && yarn build"
+  publish = "build"
+
+[dev]
+command = "yarn web"
+targetPort = 1420
+# port = 8888
